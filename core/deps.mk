@@ -478,6 +478,10 @@ define dep_fetch_cp
 	cp -R $(call dep_repo,$(1)) $(DEPS_DIR)/$(call dep_name,$(1));
 endef
 
+define dep_fetch_ln
+	ln -sf $(call dep_repo,$(1)) $(DEPS_DIR)/$(call dep_name,$(1));
+endef
+
 define dep_fetch_hex.erl
 	ssl:start(),
 	inets:start(),
